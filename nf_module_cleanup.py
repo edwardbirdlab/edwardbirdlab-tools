@@ -28,23 +28,22 @@ def get_used_files(pipeline_dir, workflows):
     used_subworkflows = []
     
     for workflow in workflows:
-        print("Subworkflows in: " + workflow.split('\\')[-1])
+        #print("Subworkflows in: " + workflow.split('\\')[-1])
         with open(workflow) as file:
             text = file.read().split('\n')
             for line in text:
                 if line.split(' ')[0] == "include":
-                    print(line.split(' ')[-1])
+                    #print(line.split(' ')[-1])
                     subworkflow = line.split(' ')[-1][4:]
                     used_subworkflows.append(subworkflow.split('/')[-1][:-1])
     
-                    print('modules used in: ' + subworkflow)
+                    #print('modules used in: ' + subworkflow)
                     with open(workflow.split('/')[0] + '/' + subworkflow[:-1]) as file:
                         sw_text = file.read().split('\n')
                         for line in sw_text:
                             if line.split(' ')[0] == "include":
-                                print(line.split(' ')[-1])
-                                used_modules.append(line.split(' ')[-1].split('/')[-1])
-                                
+                                #print(line.split(' ')[-1])
+                                used_modules.append(line.split(' ')[-1].split('/')[-1][:-1])
     return [used_subworkflows, used_modules]
 
 
@@ -59,10 +58,10 @@ def get_unused_files(pipeline_dir, subworkflow_dir, module_dir, used_sub, used_m
             unused_subworkflows.append(sub)
     
     print('---------------------------------------------------------------')
+
     
     for mod in os.listdir(pipeline_dir + '/' + module_dir):
         if mod not in used_mod:
-            print(mod + ' is not used in this pipeline and will be scheduled for archival')
             unused_modules.append(mod)
 
     return [unused_subworkflows, unused_modules]
@@ -138,7 +137,6 @@ def main():
     subworkflow_dir = args.subworkflow_dir
     module_dir = args.module_dir
 
-    # Call your function here with the command line arguments
     whole_process(pipeline_dir, workflow_dir, subworkflow_dir, module_dir)
 
 if __name__ == "__main__":
