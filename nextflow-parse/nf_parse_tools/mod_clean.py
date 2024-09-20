@@ -1,8 +1,5 @@
-#!/usr/bin/env python3
-
 import os
 import shutil
-import argparse
 
 def get_nf_files(folder):
     nf_files = []
@@ -110,34 +107,3 @@ def whole_process(pipeline_dir, workflow_dir, subworkflow_dir, module_dir):
     create_archive_structure(pipeline_dir)
     archive_files(pipeline_dir, subworkflow_dir, unused_files[0], subworkflow_dir)
     archive_files(pipeline_dir, module_dir, unused_files[1], module_dir)
-
-def parse_args():
-    parser = argparse.ArgumentParser(description='Process directories for the pipeline.')
-    
-    # Required argument
-    parser.add_argument('--pipeline_dir', type=str, required=True, help='Pipeline directory')
-    
-    # Optional arguments with default values
-    parser.add_argument('--workflow_dir', type=str, default='workflows', help='Workflow directory (default: workflows)')
-    parser.add_argument('--subworkflow_dir', type=str, default='subworkflows', help='Subworkflow directory (default: subworkflows)')
-    parser.add_argument('--module_dir', type=str, default='modules', help='Module directory (default: modules)')
-
-    return parser.parse_args()
-
-    return parser.parse_args()
-
-# Main function
-def main():
-    # Parse the arguments
-    args = parse_args()
-    
-    # Use the parsed arguments
-    pipeline_dir = args.pipeline_dir
-    workflow_dir = args.workflow_dir
-    subworkflow_dir = args.subworkflow_dir
-    module_dir = args.module_dir
-
-    whole_process(pipeline_dir, workflow_dir, subworkflow_dir, module_dir)
-
-if __name__ == "__main__":
-    main()
