@@ -13,4 +13,4 @@ RUN pip install --upgrade pip
 RUN pip install .
 
 # Set the default command to run when starting the container
-CMD ["nf-parse-tools"]
+CMD ["ebirdtools"]
