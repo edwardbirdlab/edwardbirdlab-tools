@@ -15,6 +15,8 @@ setup(
     },
     install_requires={  # Optional: List of dependencies
         'shutil',
-        'argparse'
+        'argparse',
+        'pandas',
+        'tqdm'
     },
 )
