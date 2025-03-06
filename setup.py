@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
     entry_points={                # Create a CLI command
         'console_scripts': [
-            'ebirdtools = edwardbirdlab_tools.main:main',  # 'my-tool' is the command; main function in main.py
+            'ebirdtools = main:main',  # 'my-tool' is the command; main function in main.py
         ],
     },
     install_requires=[         # Dependencies you need
