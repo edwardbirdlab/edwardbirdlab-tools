@@ -16,6 +16,7 @@ token.txt
 
 ### TEST DATA ###
 /BALROG-MON
+/test_data
 *.csv
 
 
