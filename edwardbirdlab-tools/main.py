@@ -1,6 +1,6 @@
-from nf_parse_tools.mod_clean import whole_process as module_clean
-from nf_parse_tools.arg_parse import parse_args
-from nf_parse_tools.get_containers import get_contaienrs
+from ebird_tools.mod_clean import whole_process as module_clean
+from ebird_tools.arg_parse import parse_args
+from ebird_tools.get_containers import get_contaienrs
 
 
 def main():
