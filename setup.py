@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='Edwardbirdlab-tools',
@@ -7,10 +7,15 @@ setup(
     author='Edward Bird',
     author_email='edwardbirdlab@gmail.com',
     url='https://github.com/edwardbirdlab/edwardbirdlab-tools',
-    packages=['shutil', 'argparse', 'pandas','tqdm'],
+    packages=find_packages(),
     entry_points={                # Create a CLI command
         'console_scripts': [
-            'ebirdtools = edwardbirdlab-tools.main:main',  # 'my-tool' is the command; main function in main.py
+            'ebirdtools = edwardbirdlab_tools.main:main',  # 'my-tool' is the command; main function in main.py
         ],
     },
+    install_requires=[         # Dependencies you need
+        'argparse',
+        'pandas',
+        'tqdm',
+    ],
 )
