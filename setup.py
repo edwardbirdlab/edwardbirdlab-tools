@@ -10,7 +10,7 @@ setup(
     packages=['shutil', 'argparse', 'pandas','tqdm'],
     entry_points={                # Create a CLI command
         'console_scripts': [
-            'ebirdtools = ebird_tools.main:main',  # 'my-tool' is the command; main function in main.py
+            'ebirdtools = edwardbirdlab-tools.main:main',  # 'my-tool' is the command; main function in main.py
         ],
     },
 )
