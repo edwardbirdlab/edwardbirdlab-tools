@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Edwardbirdlab-tools',
+    name='ebirdtools',
     version='1.0',
     description='A collection of tools that I have made and use for several unrelated projects',
     author='Edward Bird',
@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
     entry_points={                # Create a CLI command
         'console_scripts': [
-            'ebirdtools = main:main',  # 'my-tool' is the command; main function in main.py
+            'ebirdtools = edwardbirdlab_tools.app:main',  # 'my-tool' is the command; main function in app.py
         ],
     },
     install_requires=[         # Dependencies you need

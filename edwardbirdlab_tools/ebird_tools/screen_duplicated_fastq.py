@@ -53,4 +53,4 @@ def remove_duplicate_reads(input_fastq, output_fastq):
     print(f"Percentage of removed reads: {removal_percentage:.2f}%")
 
 def process_remove_reads(input_fastq, output_fastq):
-    remove_duplicate_reads_new(input_fastq, output_fastq)
+    remove_duplicate_reads(input_fastq, output_fastq)

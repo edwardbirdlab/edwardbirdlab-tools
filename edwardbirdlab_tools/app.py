@@ -1,7 +1,7 @@
-from ebird_tools.mod_clean import whole_process as module_clean
-from ebird_tools.arg_parse import parse_args
-from ebird_tools.get_containers import get_contaienrs
-from ebird_tools.screen_duplicated_fastq import process_remove_reads
+from edwardbirdlab_tools.ebird_tools.mod_clean import whole_process as module_clean
+from edwardbirdlab_tools.ebird_tools.arg_parse import parse_args
+from edwardbirdlab_tools.ebird_tools.get_containers import get_contaienrs
+from edwardbirdlab_tools.ebird_tools.screen_duplicated_fastq import process_remove_reads
 
 
 def main():
@@ -31,7 +31,7 @@ def main():
         output = args.output
         process_remove_reads(input, output)
     else:
-        print('Error: tool_mode must be "mod_clean" or "get_conts"')
+        print('Error: tool_mode must be "mod_clean", "get_conts", or "fastq_dupfilt"')
 
 
 if __name__ == "__main__":
