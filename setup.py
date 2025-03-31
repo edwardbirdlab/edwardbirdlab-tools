@@ -17,5 +17,6 @@ setup(
         'argparse',
         'pandas',
         'tqdm',
+        'biopython',
     ],
 )
