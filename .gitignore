@@ -18,7 +18,6 @@ token.txt
 /BALROG-MON
 /test_data
 *.csv
-*.ipynb
 
 
 
@@ -325,3 +324,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.db
