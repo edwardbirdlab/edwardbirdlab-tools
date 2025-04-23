@@ -27,6 +27,12 @@ def parse_args():
     fastq_dupfilt_parser.add_argument('-i', '--input', type=str, help='input fastq', required=True)
     fastq_dupfilt_parser.add_argument('-o', '--output', type=str, help='output fastq name, Output will not be gzipped', required=True)
 
+    # Subcommand for 'harm_analyze'
+    harm_analyze_parser = subparsers.add_parser('harm_analyze', help='Filter duplicated reads due to concat errors. Takes a FastQ file, uncompressed or in gzip format')
+    harm_analyze_parser.add_argument('-s', '--seqs', type=str, help='input sequence fasta/fasta.gz', required=True)
+    harm_analyze_parser.add_argument('-r', '--report', type=str, help='input hamronization report', required=True)
+    harm_analyze_parser.add_argument('-o', '--output', type=str, help='output csv filename', required=True)
+
     args = parser.parse_args()
 
     return args

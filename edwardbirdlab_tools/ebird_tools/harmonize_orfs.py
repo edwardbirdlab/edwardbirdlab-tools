@@ -142,12 +142,3 @@ def main(fasta, report, output):
                 pbar.update((len(header) + len(sequence)) / 6)
             else:
                 pbar.update(infile.tell() - pos)
-
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description="Process FASTA + HAMR report to extract and validate ORFs.")
-    parser.add_argument("--fasta", required=True, help="Input FASTA file (can be .gz)")
-    parser.add_argument("--report", required=True, help="HAMR report TSV file")
-    parser.add_argument("--output", required=True, help="Output CSV file path")
-    cli_args = parser.parse_args()
-    main(cli_args.fasta, cli_args.report, cli_args.output)
