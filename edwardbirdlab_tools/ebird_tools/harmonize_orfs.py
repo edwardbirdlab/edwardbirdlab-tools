@@ -71,7 +71,6 @@ def main(fasta, report, output):
         ])
 
         for header, sequence in fasta_generator(infile):
-            pos = infile.tell()
             read_name = header
 
             if read_name in seqs:
@@ -141,4 +140,4 @@ def main(fasta, report, output):
             if fasta.endswith(".gz"):
                 pbar.update((len(header) + len(sequence)) / 6)
             else:
-                pbar.update(infile.tell() - pos)
+                pbar.update(len(header) + len(sequence) + 2)
