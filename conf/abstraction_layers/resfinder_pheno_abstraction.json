@@ -1,0 +1,7 @@
+{
+  "antibiotic": 0,
+  "drug_class": 1,
+  "wgs_predicted_phenotype": 2,
+  "match_level": 3,
+  "genetic_background": 4
+}

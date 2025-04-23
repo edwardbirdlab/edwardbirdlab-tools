@@ -1,0 +1,11 @@
+{
+  "Resistance gene": "resistance_gene",
+  "Identity": "identity",
+  "Alignment Length/Gene Length": "alignment_vs_gene_length",
+  "Coverage": "coverage",
+  "Position in reference": "reference_position",
+  "Contig": "contig_id",
+  "Position in contig": "contig_position",
+  "Phenotype": "phenotype",
+  "Accession no.": "accession_number"
+}
